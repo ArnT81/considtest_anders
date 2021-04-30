@@ -39,6 +39,25 @@ query {
 }
 `
 
+const ALL_PRODUCTS = `
+query {
+  allProducts(orderBy: name_ASC) {
+    price
+    name
+    description {
+      value
+    }
+    alternativeImages {
+      url
+    }
+    mainImage {
+      url
+    }
+  }
+}
+`
+
+
 const aboutPage = async () => {
   const result = await query({ query: ABOUT_PAGE });
   return result.page;
@@ -49,4 +68,9 @@ const contactPage = async () => {
   return result.page;
 }
 
-export { aboutPage, contactPage };
+const allProducts = async () => {
+  const result = await query({ query: ALL_PRODUCTS });
+  return result.allProducts;
+}
+
+export { aboutPage, contactPage, allProducts };

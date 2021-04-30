@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <CustomHead />
       <h1>Index.js</h1>
-
+      
     </div>
   )
 }

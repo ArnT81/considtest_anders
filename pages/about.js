@@ -4,7 +4,7 @@ import CustomHead from '../components/CustomHead';
 import styles from '../styles/about.module.css';
 
 const about = ({ aboutProps }) => {
-    console.log(aboutProps)
+    // console.log(aboutProps)
     const { title, mainImage, content, slug, seo } = aboutProps;
 
     return (

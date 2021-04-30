@@ -1,0 +1,21 @@
+.shop {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - var(--navbarHeight));
+    background: var(--secondaryColor);
+}
+
+.header {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+}
+
+.productcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 60vw;
+    background: var(--primaryColor);
+}

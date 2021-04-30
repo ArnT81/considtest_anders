@@ -1,0 +1,14 @@
+.card{
+    width: 31%;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 1% auto;
+}
+
+.imagecontainer {
+    background: red;
+}
+
+.card img {
+    width: 100%;
+}

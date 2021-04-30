@@ -5,7 +5,7 @@ import styles from '../styles/contact.module.css';
 
 
 const contact = ({ contactProps}) => {
-    console.log(contactProps);
+    // console.log(contactProps);
     const { title, mainImage, content, slug, seo } = contactProps;
     return (
         <div className={styles.contact}>
