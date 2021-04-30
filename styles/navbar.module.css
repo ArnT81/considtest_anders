@@ -1,0 +1,9 @@
+.navbar {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: var(--navbarHeight);
+    background: var(--bg);
+    color: var(--primaryColor)
+}
+
