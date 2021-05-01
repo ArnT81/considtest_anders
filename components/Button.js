@@ -1,14 +1,14 @@
 //STYLES
 import styles from '../styles/button.module.css';
 
-/* AVAILABLE PROPS
-function
-text
-width
-color
-borderColor
-position: left, center, right
-*/
+/** ___ AVAILABLE PROPS ___
+*   function
+*   text
+*   width
+*   color
+*   borderColor
+*   position: left, center, right
+**/
 
 function Button(props) {
     // VARIABLES AND STATES

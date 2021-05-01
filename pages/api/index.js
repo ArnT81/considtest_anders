@@ -57,19 +57,12 @@ query {
     id
     price
     name
-    description {
-      value
-    }
-    alternativeImages {
-      url
-    }
     mainImage {
       url
     }
   }
 }
 `
-
 const PRODUCT = `
 query ($name: String!) {
   product(filter: {name: {eq: $name}}) {
@@ -88,12 +81,6 @@ query ($name: String!) {
   }
 }
 `
-//todo  filter and ship it in query change to productByName
-const product = async name => {
-  // console.log('over HERE!!!!!!',name)
-  const result = await query({ query: PRODUCT, variables: { name } });
-  return result;
-}
 
 const startPage = async () => {
   const result = await query({ query: START_PAGE });
@@ -115,6 +102,9 @@ const allProducts = async () => {
   return result.allProducts;
 }
 
+const productByName = async name => {
+  const result = await query({ query: PRODUCT, variables: { name } });
+  return result.product;
+}
 
-
-export { startPage, aboutPage, contactPage, allProducts, product };
+export { startPage, aboutPage, contactPage, allProducts, productByName };

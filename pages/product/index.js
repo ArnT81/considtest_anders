@@ -1,13 +1,20 @@
+import React, { useState } from 'react';
 //COMPONENTS
 import CustomHead from '../../components/CustomHead';
 import Card from '../../components/Card';
+import Cart from '../../components/Cart';
 //API
 import { allProducts } from '../api';
 //STYLES
 import styles from '../../styles/product.module.css';
 
+
 const product = ({ productsProps }) => {
-    // console.log(productsProps);
+    const [toggle, setToggle] = useState(false)
+
+    const handleClick = () => {
+        setToggle(!toggle)
+    }
 
     //MAPPING PRODUCTS
     const RenderProducts = () => {
@@ -40,6 +47,7 @@ const product = ({ productsProps }) => {
             <div className={styles.productcontainer}>
                 <RenderProducts />
             </div>
+            {toggle && <Cart />}
         </div>
     )
 }

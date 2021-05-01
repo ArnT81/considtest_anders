@@ -1,13 +1,10 @@
 import Button from './Button';
 import Link from 'next/link';
-
+//STYLES
 import styles from '../styles/card.module.css';
 
-function Card({ name, price, description, mainImage, alternativeImages, product }) {
-    // console.log(description);
+function Card({ name, price, mainImage, product }) {
     const buttonText = 'lägg i kundvagn'
-    //todo singleProductPage onClick with alternative images
-    //todo description from slug?
 
     function buttonFunctionality() {
         console.log('Happens')
@@ -22,7 +19,6 @@ function Card({ name, price, description, mainImage, alternativeImages, product 
             </Link>
             <h1>{name}</h1>
             <h1>price: {price}$</h1>
-            {/* <p>{description.value}</p> */}
 
             <Button
                 function={buttonFunctionality}

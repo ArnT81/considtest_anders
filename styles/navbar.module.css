@@ -1,9 +1,18 @@
 .navbar {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: var(--navbarHeight);
     background: var(--bg);
-    color: var(--primaryColor)
+    color: var(--primaryColor);
+    padding-right: 20px;
 }
 
+.cart {
+    cursor: pointer;
+    height: 75%;
+    stroke: var(--primaryColor);
+    stroke-width: 2px;
+}
