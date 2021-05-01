@@ -71,23 +71,29 @@ query {
 `
 
 const PRODUCT = `
-query {
-  product(filter: {name: {eq: "Notebook"}}) {
-    id
-    name
+query ($name: String!) {
+  product(filter: {name: {eq: $name}}) {
     price
+    name
+    mainImage {
+      url
+    }
     alternativeImages {
       url
+      id
     }
     description {
       value
     }
-    mainImage {
-      url
-    }
   }
 }
 `
+//todo  filter and ship it in query change to productByName
+const product = async name => {
+  // console.log('over HERE!!!!!!',name)
+  const result = await query({ query: PRODUCT, variables: { name } });
+  return result;
+}
 
 const startPage = async () => {
   const result = await query({ query: START_PAGE });
@@ -109,10 +115,6 @@ const allProducts = async () => {
   return result.allProducts;
 }
 
-const product = async () => {
-  const result = await query({ query: PRODUCT });
-  return result;
-}
 
 
 export { startPage, aboutPage, contactPage, allProducts, product };
