@@ -2,7 +2,7 @@
   --primaryColor: white;
   --secondaryColor: #fe424d;
   --bg: #022d41;
-  --navbarHeight: 80px;
+  --navbarHeight: 100px;
 }
 
 * {
@@ -37,4 +37,14 @@ a {
   color: inherit;
   font-size: xx-large;
   text-decoration: none;
+}
+
+h1 {
+  font-size: 6rem;
+  margin: 10px;
+}
+
+p {
+  font-size: 2rem;
+  margin: 10px;
 }

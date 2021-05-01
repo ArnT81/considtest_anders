@@ -1,11 +1,12 @@
-import CustomHead from '../components/CustomHead';
-import Card from '../components/Card';
-
-import { allProducts } from '../pages/api';
+//COMPONENTS
+import CustomHead from '../../components/CustomHead';
+import Card from '../../components/Card';
+//API
+import { allProducts } from '../api';
 //STYLES
-import styles from '../styles/shop.module.css';
+import styles from '../../styles/product.module.css';
 
-const shop = ({ productsProps }) => {
+const product = ({ productsProps }) => {
     // console.log(productsProps);
 
     //MAPPING PRODUCTS
@@ -15,6 +16,7 @@ const shop = ({ productsProps }) => {
                 return (
                     <Card
                         key={index}
+                        product={product}
                         name={product.name}
                         price={product.price}
                         description={product.description}
@@ -28,26 +30,24 @@ const shop = ({ productsProps }) => {
 
 
     return (
-        <div className={styles.shop}>
+        <div className={styles.product}>
             <CustomHead
-                title="contact"
-                keywords="about us, consid, web, development, frontend"
-                description="Welcome to Consid, read all about us"
+                title="product"
+                keywords="shop, consid, merchandise"
+                description="Welcome to our merchandise area"
             />
             <h1 className={styles.header}>Products</h1>
             <div className={styles.productcontainer}>
                 <RenderProducts />
             </div>
-
         </div>
     )
 }
-export default shop
+export default product;
 
 
 export async function getStaticProps() {
-    console.log(allProducts);
-    const productsProps = await allProducts()
+    const productsProps = await allProducts();
     return {
         props: {
             productsProps

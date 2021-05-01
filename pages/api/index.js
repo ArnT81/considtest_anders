@@ -1,5 +1,18 @@
 import query from './query';
 
+const START_PAGE = `
+query {
+  startpage {
+    title
+    mainImage {
+      url
+    }
+    content {
+      value
+    }
+  }
+}
+`
 const ABOUT_PAGE = `
 query {
   page(filter: {slug: {eq: "about"}}) {
@@ -38,10 +51,10 @@ query {
   }
 }
 `
-
 const ALL_PRODUCTS = `
 query {
   allProducts(orderBy: name_ASC) {
+    id
     price
     name
     description {
@@ -57,6 +70,29 @@ query {
 }
 `
 
+const PRODUCT = `
+query {
+  product(filter: {name: {eq: "Notebook"}}) {
+    id
+    name
+    price
+    alternativeImages {
+      url
+    }
+    description {
+      value
+    }
+    mainImage {
+      url
+    }
+  }
+}
+`
+
+const startPage = async () => {
+  const result = await query({ query: START_PAGE });
+  return result.startpage;
+}
 
 const aboutPage = async () => {
   const result = await query({ query: ABOUT_PAGE });
@@ -73,4 +109,10 @@ const allProducts = async () => {
   return result.allProducts;
 }
 
-export { aboutPage, contactPage, allProducts };
+const product = async () => {
+  const result = await query({ query: PRODUCT });
+  return result;
+}
+
+
+export { startPage, aboutPage, contactPage, allProducts, product };

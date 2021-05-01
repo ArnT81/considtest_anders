@@ -1,13 +1,16 @@
 .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 31%;
     padding: 20px;
     border: 2px solid black;
     margin: 1% auto;
 }
 
-.imagecontainer {
+/* .imagecontainer {
     background: red;
-}
+} */
 
 .card img {
     width: 100%;

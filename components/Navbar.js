@@ -11,7 +11,7 @@ const Navbar = () => {
                     <Link href="/">Home</Link>
                 </li>
                 <li>
-                    <Link href="/shop">Shop</Link>
+                    <Link href="/product">Shop</Link>
                 </li>
                 <li>
                     <Link href="/about">About</Link>
@@ -24,4 +24,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;
