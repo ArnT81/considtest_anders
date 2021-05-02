@@ -1,0 +1,28 @@
+.cart {
+    position: absolute;
+    right: 10px;
+    top: 110px;
+    width: 30vw;
+    height: 80vh;
+    background: var(--bg);
+    color: var(--primaryColor);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.closecart {
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    font-size: xx-large;
+    background: var(--secondaryColor);
+    border-radius: 50%;
+}

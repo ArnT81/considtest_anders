@@ -1,14 +1,19 @@
+// import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 // STYLES
 import styles from '../styles/navbar.module.css';
 
 
 const Navbar = (props) => {
-    // console.log(props);
+    // console.log('in Navbar', props);
+
     
-    const RenderCart = () => {
+    const RenderCartIcon = () => {
         return (
-            <svg className={styles.cart} viewBox="0 0 74 60" fill="none">
+            <svg
+                onClick={props.toggleCartComponent}
+                className={styles.cart}
+                viewBox="0 0 74 60" fill="none">
                 <path d="M3 3H11.0302L16.0862 28.6362L13.6931 36.6299L63.7047 36.6505L71 12.5598H20.9088" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M13.7375 36.4271L10.3576 47.209H60.4492" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M66.1905 28.3335H24.1272" strokeLinecap="round" />
@@ -21,9 +26,6 @@ const Navbar = (props) => {
         )
     }
 
-    const handleClick=()=>{
-        console.log('happens');
-    }
 
     return (
         <nav className={styles.navbar}>
@@ -41,7 +43,7 @@ const Navbar = (props) => {
                     <Link href="/contact">Contact</Link>
                 </li>
             </ul>
-            {props.showCart && <RenderCart onClick={handleClick}/>}
+            {props.showCartIcon && <RenderCartIcon />}
         </nav>
     )
 }

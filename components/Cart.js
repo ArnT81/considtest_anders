@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+//STYLES
+import styles from '../styles/cart.module.css';
 
 
-function Cart() {
+function Cart({ toggleCartComponent }) {
+    // console.log('In Cart', props);
 
     return (
-        <div>
-            <h1>This is the cart</h1>
+        <div className={styles.cart}>
+            <div className={styles.head}>
+                <div onClick={toggleCartComponent}
+                    className={styles.closecart}
+                >
+                    X
+            </div>
+                <h2>Cart</h2>
+            </div>
+
         </div>
     )
 }

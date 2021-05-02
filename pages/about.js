@@ -6,11 +6,11 @@ import { StructuredText } from 'react-datocms';
 import styles from '../styles/about.module.css';
 
 
-const about = ({ aboutProps, record }) => {
-    console.log(record)
+const about = ({ aboutProps }) => {
+
     const { title, mainImage, content } = aboutProps;
 
-    
+
     return (
         <div className={styles.about}>
             <CustomHead
