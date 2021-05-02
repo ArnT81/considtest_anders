@@ -6,6 +6,7 @@ import styles from '../styles/button.module.css';
 *   text
 *   width
 *   color
+*   background
 *   borderColor
 *   position: left, center, right
 **/
@@ -37,6 +38,7 @@ function Button(props) {
             style={{
                 width: props.width,
                 color: props.color,
+                background: props.background,
                 border: `2px outset ${props.borderColor}`,
                 alignSelf: arrange
             }}

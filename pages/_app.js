@@ -9,7 +9,7 @@ import '../styles/globals.css';
 function MyApp({ Component, pageProps }) {
   //VARIABLES & STATES
   let showCartIcon;
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(false)
 
 
   //FUNKTIONER
