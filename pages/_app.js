@@ -1,14 +1,12 @@
 import Navbar from '../components/Navbar';
+//STYLES
 import '../styles/globals.css';
-
-//! main source of truth?
 
 
 function MyApp({ Component, pageProps }) {
   // Shows the CartIcon only in the product page 
   let showCart;
   pageProps.productsProps ? showCart = true : showCart = false
-
 
 
   return (
@@ -18,5 +16,4 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
 export default MyApp;

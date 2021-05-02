@@ -4,3 +4,8 @@
     width: 100vw;
     height: calc(100vh - var(--navbarHeight));
 }
+
+.contact >main {
+    display: flex;
+    padding: 0 10px;
+}

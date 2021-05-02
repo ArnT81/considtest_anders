@@ -4,3 +4,8 @@
     width: 100vw;
     height: calc(100vh - var(--navbarHeight));
 }
+
+.about >main {
+    display: flex;
+    padding: 0 10px;
+}

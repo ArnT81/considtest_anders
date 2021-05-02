@@ -12,13 +12,15 @@ function Card({ name, price, mainImage, product }) {
 
     return (
         <div className={styles.card}>
-            <Link href="/product/[name]" as={`/product/${[product.name]}`}>
-                <div className={styles.imagecontainer}>
+            <div>
+                <Link href="/product/[name]" as={`/product/${[product.name]}`}>
                     <img src={mainImage.url} alt="product" />
+                </Link>
+                <div className={styles.information}>
+                    <h2>{name}</h2>
+                    <h2>price: {price}$</h2>
                 </div>
-            </Link>
-            <h1>{name}</h1>
-            <h1>price: {price}$</h1>
+            </div>
 
             <Button
                 function={buttonFunctionality}

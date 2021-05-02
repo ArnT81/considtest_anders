@@ -5,10 +5,12 @@ import { StructuredText } from 'react-datocms';
 //STYLES
 import styles from '../styles/about.module.css';
 
-const about = ({ aboutProps }) => {
-    // console.log(aboutProps)
+
+const about = ({ aboutProps, record }) => {
+    console.log(record)
     const { title, mainImage, content } = aboutProps;
 
+    
     return (
         <div className={styles.about}>
             <CustomHead
@@ -16,45 +18,17 @@ const about = ({ aboutProps }) => {
                 keywords="about us, consid, web, development, frontend"
                 description="Welcome to Consid, read all about us"
             />
-
             <h1>{title}</h1>
-            <div style={{ display: 'flex' }}>
+            <main>
                 <img src={mainImage.url} alt="main" />
                 <StructuredText
                     data={content}
-                    renderBlock={renderBlock}
-                    renderInlineRecord={renderInlineRecord}
                 />
-            </div>
+            </main>
         </div>
     )
 }
 export default about;
-
-
-const renderBlock = ({ record }) => {
-    switch (record.__typename) {
-        case 'MyarticleblockRecord':
-            return (
-                <div>
-                    <h1>{record.articleBlockTitle}</h1>
-                    <p><img src={record.image.url} /></p>
-                </div>
-            )
-        default:
-            return ''
-    }
-}
-
-
-const renderInlineRecord = ({ record }) => {
-    switch (record.__typename) {
-        case 'ArticleRecord':
-            return <strong>{record.title}</strong>
-        default:
-            return ''
-    }
-}
 
 
 export async function getStaticProps() {

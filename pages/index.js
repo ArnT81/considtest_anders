@@ -5,7 +5,7 @@ import { StructuredText } from 'react-datocms';
 //STYLES
 import styles from '../styles/home.module.css'
 
-//todo byta ut så texten tar emot css
+
 export default function Home({ homeProps }) {
   let { title, mainImage, content } = homeProps;
 
@@ -19,40 +19,12 @@ export default function Home({ homeProps }) {
         src={mainImage.url}
         alt="main" />
       <main>
-
         <StructuredText
           data={content}
-          renderBlock={renderBlock}
-          renderInlineRecord={renderInlineRecord}
         />
       </main>
     </div>
   )
-}
-
-
-const renderBlock = ({ record }) => {
-  switch (record.__typename) {
-    case 'MyarticleblockRecord':
-      return (
-        <div>
-          <h1>{record.articleBlockTitle}</h1>
-          <p><img src={record.image.url} /></p>
-        </div>
-      )
-    default:
-      return ''
-  }
-}
-
-
-const renderInlineRecord = ({ record }) => {
-  switch (record.__typename) {
-    case 'ArticleRecord':
-      return <strong>{record.title}</strong>
-    default:
-      return ''
-  }
 }
 
 

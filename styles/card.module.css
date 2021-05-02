@@ -8,9 +8,10 @@
     margin: 1% auto;
 }
 
-/* .imagecontainer {
-    background: red;
-} */
+.information {
+    display: flex;
+    justify-content: space-between;
+}
 
 .card img {
     width: 100%;
