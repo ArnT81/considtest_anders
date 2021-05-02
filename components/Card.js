@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import Button from './Button';
 import Link from 'next/link';
 //STYLES
@@ -5,16 +7,45 @@ import styles from '../styles/card.module.css';
 
 
 //todo change text and functionality och button depending on cart
-function Card({ name, price, mainImage, product, cart }) {
+function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart }) {
     console.log('In Card', cart)
 
-    const buttonText = 'lägg i kundvagn'
+    //!TEMP MOCKED CART
+    let arne = [
+        { name: 'Jacket' },
+        { name: 'Notebook' }
+    ]
 
+    console.log(arne);
 
+    // VARIABLES & STATES
+    const [inCartAlready, setInCartAlready] = useState(false);
+    const [buttonText, setButtonText] = useState('lägg i kundvagn');
 
-    function buttonFunctionality() {
-        console.log('Happens')
+    useEffect(() => {
+        determenIfAlreadyInCart();
+        return () => {
+            determenIfAlreadyInCart();
+        }
+    }, [])
+
+    // FUNCTIONS
+    function determenIfAlreadyInCart() {
+        setButtonText('lägg i kundvagn');
+        setInCartAlready(false);
+
+        arne.forEach((item) => {
+            if (item.name === product.name) {
+                setButtonText('vald');
+                setInCartAlready(true);
+            }
+        });
     }
+
+    function buttonFunctionality(thisProduct) {
+        inCartAlready ? removeFromCart(thisProduct) : addToCart(thisProduct);
+    }
+
 
     return (
         <div className={styles.card}>
@@ -29,7 +60,7 @@ function Card({ name, price, mainImage, product, cart }) {
             </div>
 
             <Button
-                function={buttonFunctionality}
+                function={() => buttonFunctionality(product)}
                 text={buttonText}
                 width="100%"
                 color="black"

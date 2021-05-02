@@ -14,7 +14,13 @@ const product = ({ productsProps, redux, setCart }) => {
 
     console.log(redux)
 
+    function addToCart(product) {
+        console.log('adding', product)
+    }
 
+    function removeFromCart(product) {
+        console.log('removing', product)
+    }
 
     //MAPPING PRODUCTS
     const RenderProducts = () => {
@@ -30,6 +36,8 @@ const product = ({ productsProps, redux, setCart }) => {
                         mainImage={product.mainImage}
                         alternativeImages={product.alternativeImages}
                         cart={redux.cart}
+                        addToCart={addToCart}
+                        removeFromCart={removeFromCart}
                     />
                 )
             })
