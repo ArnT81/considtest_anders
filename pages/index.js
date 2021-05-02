@@ -3,7 +3,7 @@ import CustomHead from '../components/CustomHead';
 import { startPage } from '../pages/api';
 import { StructuredText } from 'react-datocms';
 //STYLES
-import styles from '../styles/home.module.css'
+import styles from '../styles/home.module.css';
 
 
 export default function Home({ homeProps }) {

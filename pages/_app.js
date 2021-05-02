@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         showCartIcon={showCartIcon}
         toggleCartComponent={toggleCartComponent}
       />
-      {toggle && <Cart toggleCartComponent={toggleCartComponent}/>}
+      {pageProps.productsProps && toggle && <Cart toggleCartComponent={toggleCartComponent}/>}
       <Component {...pageProps} />
     </>
   )

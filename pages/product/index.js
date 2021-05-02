@@ -15,11 +15,11 @@ const product = ({ productsProps, redux, setCart }) => {
     console.log(redux)
 
     function addToCart(product) {
-        console.log('adding', product)
+        console.log('adding', product.name)
     }
 
     function removeFromCart(product) {
-        console.log('removing', product)
+        console.log('removing', product.name)
     }
 
     //MAPPING PRODUCTS
