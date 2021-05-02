@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Cart from '../components/Cart';
+//REDUX
+import { wrapper } from '../redux/store';
 //STYLES
 import '../styles/globals.css';
 
@@ -36,4 +38,4 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-export default MyApp;
+export default wrapper.withRedux(MyApp);

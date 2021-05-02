@@ -3,8 +3,14 @@ import Link from 'next/link';
 //STYLES
 import styles from '../styles/card.module.css';
 
-function Card({ name, price, mainImage, product }) {
+
+//todo change text and functionality och button depending on cart
+function Card({ name, price, mainImage, product, cart }) {
+    console.log('In Card', cart)
+
     const buttonText = 'lägg i kundvagn'
+
+
 
     function buttonFunctionality() {
         console.log('Happens')

@@ -2,12 +2,19 @@ import CustomHead from '../../components/CustomHead';
 import Card from '../../components/Card';
 //API
 import { allProducts } from '../api';
+//REDUX
+import { connect } from 'react-redux';
+import { setCart } from '../../redux/actions/cart';
 //STYLES
 import styles from '../../styles/product.module.css';
 
 
-const product = ({ productsProps }) => {
-  
+//todo addToCart, removeFromcart and send as props to Card
+const product = ({ productsProps, redux, setCart }) => {
+
+    console.log(redux)
+
+
 
     //MAPPING PRODUCTS
     const RenderProducts = () => {
@@ -22,6 +29,7 @@ const product = ({ productsProps }) => {
                         description={product.description}
                         mainImage={product.mainImage}
                         alternativeImages={product.alternativeImages}
+                        cart={redux.cart}
                     />
                 )
             })
@@ -43,7 +51,18 @@ const product = ({ productsProps }) => {
         </div>
     )
 }
-export default product;
+
+
+//REDUX
+const mapStateToProps = state => ({
+    redux: state
+})
+const mapDispatchToProps = {
+    setCart
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(product);
 
 
 export async function getStaticProps() {
