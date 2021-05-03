@@ -8,15 +8,15 @@ import styles from '../styles/card.module.css';
 
 //todo change text and functionality och button depending on cart
 function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart }) {
-    console.log('In Card', cart)
+    // console.log('In Card', cart)
 
     //!TEMP MOCKED CART
-    let arne = [
-        { name: 'Jacket' },
-        { name: 'Notebook' }
-    ]
+    /*  let arne = [
+         { name: 'Jacket' },
+         { name: 'Notebook' }
+     ] */
 
-    console.log(arne);
+
 
     // VARIABLES & STATES
     const [inCartAlready, setInCartAlready] = useState(false);
@@ -34,12 +34,12 @@ function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart
         setButtonText('lägg i kundvagn');
         setInCartAlready(false);
 
-        arne.forEach((item) => {
-            if (item.name === product.name) {
-                setButtonText('vald');
-                setInCartAlready(true);
-            }
-        });
+        /*  arne.forEach((item) => {
+             if (item.name === product.name) {
+                 setButtonText('vald');
+                 setInCartAlready(true);
+             }
+         }); */
     }
 
     function buttonFunctionality(thisProduct) {
@@ -50,9 +50,9 @@ function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart
     return (
         <div className={styles.card}>
             <div>
-                <Link href="/product/[name]" as={`/product/${[product.name]}`}>
+                {/* <Link href="/product/[name]" as={`/product/${[product.name]}`}>
                     <img src={mainImage.url} alt="product" />
-                </Link>
+                </Link> */}
                 <div className={styles.information}>
                     <h2>{name}</h2>
                     <h2>price: {price}$</h2>
