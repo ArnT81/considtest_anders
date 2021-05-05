@@ -12,10 +12,6 @@ import styles from '../../styles/product.module.css';
 //todo addToCart, removeFromcart and send as props to Card
 const product = ({ productsProps, redux, addToCartAction, removeFromCartAction }) => {
 
-
-    //!temp
-    console.log(redux)
-
     //FUNCTIONS
     function add(product) {
         addToCartAction(product)

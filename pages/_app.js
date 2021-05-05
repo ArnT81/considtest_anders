@@ -7,7 +7,7 @@ import { wrapper } from '../redux/store';
 import '../styles/globals.css';
 
 //! Main source if truth
-
+console.log(wrapper)
 function MyApp({ Component, pageProps }) {
   //VARIABLES & STATES
   let showCartIcon;

@@ -1,11 +1,13 @@
-// import React, { useState, useEffect } from 'react';
+
 import Link from 'next/link';
+//REDUX
+import { connect } from 'react-redux';
 // STYLES
 import styles from '../styles/navbar.module.css';
 
 
-const Navbar = (props) => {
-    // console.log('in Navbar', props);
+const Navbar = (props, redux) => {
+    // console.log('in Navbar', redux);
 
     
     const RenderCartIcon = () => {
@@ -48,4 +50,14 @@ const Navbar = (props) => {
     )
 }
 
-export default Navbar;
+//REDUX
+const mapStateToProps = state => ({
+    redux: state.cart
+})
+
+
+
+export default connect(mapStateToProps)(Navbar);
+
+
+// export default Navbar;

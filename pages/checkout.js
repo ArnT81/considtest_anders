@@ -1,16 +1,16 @@
 import { useRouter } from 'next/router';
 //COMPONENTS
 import Button from '../components/Button';
-//REDUX
-import { connect } from 'react-redux';
+import CartItem from '../components/CartItem';
 //STYLES
 import styles from '../styles/checkout.module.css';
 
 
-const checkout = ({ redux }) => {
+const checkout = () => {
     const router = useRouter();
 
-    const cancel = () => {
+    //FUNCTIONS
+    const goBack = () => {
         router.push("/product");
     }
 
@@ -18,36 +18,21 @@ const checkout = ({ redux }) => {
         router.push("/confirmation");
     }
 
-    const DisplayCart = () => {
-        return (
-            <>
-                {redux.map((item, index) => {
-                    return (
-                        <div key={index} style={{ display: 'flex' }}>
-                            <img src={item.mainImage.url} style={{ height: "100px" }} />
-                            <h2>{item.name}</h2>
-                            <h2>{item.price}$</h2>
-                        </div>
-                    )
-                })
-                }
-            </>
-        )
-    }
-
 
     return (
         <div className={styles.checkout}>
             <h1>CHECKOUT PAGE</h1>
-            <DisplayCart />
+            <div>
+                <CartItem />
+            </div>
             <div className={styles.buttoncontainer}>
                 <Button
-                    function={cancel}
+                    function={goBack}
                     position="center"
                     text={'avbryt'}
                     width="200px"
                     color="white"
-                    background="red"
+                    background="maroon"
                     borderColor="black"
                 />
                 <Button
@@ -56,7 +41,7 @@ const checkout = ({ redux }) => {
                     text={'köp'}
                     width="200px"
                     color="white"
-                    background="green"
+                    background="#8ac926"
                     borderColor="black"
                 />
             </div>
@@ -64,10 +49,5 @@ const checkout = ({ redux }) => {
     )
 }
 
-//REDUX
-const mapStateToProps = state => ({
-    redux: state.cart
-})
-
-export default connect(mapStateToProps)(checkout);
+export default checkout;
 
