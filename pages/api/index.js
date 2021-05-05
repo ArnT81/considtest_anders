@@ -60,6 +60,13 @@ query {
     mainImage {
       url
     }
+    alternativeImages {
+      url
+      id
+    }
+    description {
+      value
+    }
   }
 }
 `

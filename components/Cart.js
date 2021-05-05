@@ -4,14 +4,35 @@ import Button from './Button';
 //STYLES
 import styles from '../styles/cart.module.css';
 
+//REDUX
+import { connect } from 'react-redux';
 
-function Cart({ toggleCartComponent }) {
-    // console.log('In Cart', props);
+function Cart({ toggleCartComponent, redux }) {
+
+    console.log(redux.length)
     const router = useRouter();
 
+    //FUNCTIONS
     const goToCheckout = () => {
         router.push("checkout");
         toggleCartComponent();
+    }
+
+    const DisplayCart = () => {
+        return (
+            <>
+                {redux.map((item, index) => {
+                    return (
+                        <div key={index} style={{ display: 'flex' }}>
+                            <img src={item.mainImage.url} style={{ height: "100px" }} />
+                            <h2>{item.name}</h2>
+                            <h2>{item.price}$</h2>
+                        </div>
+                    )
+                })
+                }
+            </>
+        )
     }
 
 
@@ -25,6 +46,7 @@ function Cart({ toggleCartComponent }) {
             </div>
                 <h2>Cart</h2>
             </div>
+            <DisplayCart/>
             <Button
                 function={goToCheckout}
                 position="right"
@@ -38,4 +60,11 @@ function Cart({ toggleCartComponent }) {
     )
 }
 
-export default Cart;
+//REDUX
+const mapStateToProps = state => ({
+    redux: state.cart
+})
+
+
+export default connect(mapStateToProps)(Cart);
+// export default Cart;

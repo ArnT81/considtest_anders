@@ -4,24 +4,25 @@ import Card from '../../components/Card';
 import { allProducts } from '../api';
 //REDUX
 import { connect } from 'react-redux';
-import { addToCart } from '../../redux/actions/cart';
+import { addToCartAction, removeFromCartAction } from '../../redux/actions/cart_actions';
 //STYLES
 import styles from '../../styles/product.module.css';
 
 
 //todo addToCart, removeFromcart and send as props to Card
-const product = ({ productsProps, redux, addToCart }) => {
+const product = ({ productsProps, redux, addToCartAction, removeFromCartAction }) => {
 
-    console.log('IN COMPONENT', redux.products)
-    
 
+    //!temp
+    console.log(redux)
+
+    //FUNCTIONS
     function add(product) {
-        // console.log('adding', product.name)
-        addToCart(product)
+        addToCartAction(product)
     }
 
     function removeFromCart(product) {
-        console.log('removing', product.name)
+        removeFromCartAction(product)
     }
 
     //MAPPING PRODUCTS
@@ -37,7 +38,7 @@ const product = ({ productsProps, redux, addToCart }) => {
                         description={product.description}
                         mainImage={product.mainImage}
                         alternativeImages={product.alternativeImages}
-                        cart={redux.cart}
+                        cart={redux}
                         addToCart={add}
                         removeFromCart={removeFromCart}
                     />
@@ -65,10 +66,10 @@ const product = ({ productsProps, redux, addToCart }) => {
 
 //REDUX
 const mapStateToProps = state => ({
-    redux: state.cart.state
+    redux: state.cart
 })
 const mapDispatchToProps = {
-    addToCart
+    addToCartAction, removeFromCartAction
 }
 
 

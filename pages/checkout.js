@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
 //COMPONENTS
 import Button from '../components/Button';
+//REDUX
+import { connect } from 'react-redux';
 //STYLES
 import styles from '../styles/checkout.module.css';
 
 
-const checkout = () => {
+const checkout = ({ redux }) => {
     const router = useRouter();
 
     const cancel = () => {
@@ -16,11 +18,28 @@ const checkout = () => {
         router.push("/confirmation");
     }
 
+    const DisplayCart = () => {
+        return (
+            <>
+                {redux.map((item, index) => {
+                    return (
+                        <div key={index} style={{ display: 'flex' }}>
+                            <img src={item.mainImage.url} style={{ height: "100px" }} />
+                            <h2>{item.name}</h2>
+                            <h2>{item.price}$</h2>
+                        </div>
+                    )
+                })
+                }
+            </>
+        )
+    }
+
+
     return (
         <div className={styles.checkout}>
             <h1>CHECKOUT PAGE</h1>
-
-            <h2>Låtsasvaror</h2>
+            <DisplayCart />
             <div className={styles.buttoncontainer}>
                 <Button
                     function={cancel}
@@ -45,4 +64,10 @@ const checkout = () => {
     )
 }
 
-export default checkout;
+//REDUX
+const mapStateToProps = state => ({
+    redux: state.cart
+})
+
+export default connect(mapStateToProps)(checkout);
+
