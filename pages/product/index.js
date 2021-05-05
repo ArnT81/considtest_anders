@@ -1,3 +1,4 @@
+//COMPONENTS
 import CustomHead from '../../components/CustomHead';
 import Card from '../../components/Card';
 //API
@@ -9,7 +10,6 @@ import { addToCartAction, removeFromCartAction } from '../../redux/actions/cart_
 import styles from '../../styles/product.module.css';
 
 
-//todo addToCart, removeFromcart and send as props to Card
 const product = ({ productsProps, redux, addToCartAction, removeFromCartAction }) => {
 
     //FUNCTIONS
@@ -59,7 +59,6 @@ const product = ({ productsProps, redux, addToCartAction, removeFromCartAction }
     )
 }
 
-
 //REDUX
 const mapStateToProps = state => ({
     redux: state.cart
@@ -68,9 +67,7 @@ const mapDispatchToProps = {
     addToCartAction, removeFromCartAction
 }
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(product);
-
 
 export async function getStaticProps() {
     const productsProps = await allProducts();

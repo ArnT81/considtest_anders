@@ -1,3 +1,4 @@
+//COMPONENTS
 import CustomHead from '../components/CustomHead';
 //API
 import { startPage } from '../pages/api';
@@ -26,7 +27,6 @@ export default function Home({ homeProps }) {
     </div>
   )
 }
-
 
 export async function getStaticProps() {
   const homeProps = await startPage()

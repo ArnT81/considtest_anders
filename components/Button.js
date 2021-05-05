@@ -11,10 +11,10 @@ import styles from '../styles/button.module.css';
 *   position: left, center, right
 **/
 
-function Button(props) {
-    // VARIABLES AND STATES
+const Button = (props) => {
     let arrange;
 
+    //FUNCTIONS
     switch (props.position) {
         case "left":
             arrange = "flex-start"

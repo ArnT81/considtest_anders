@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 //STYLES
 import styles from '../styles/cartitem.module.css';
 
-function CartItem({ redux }) {
+const CartItem = ({ redux }) => {
 
     return (
         <>

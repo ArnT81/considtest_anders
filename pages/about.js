@@ -1,3 +1,4 @@
+//COMPONENTS
 import CustomHead from '../components/CustomHead';
 //API
 import { aboutPage } from './api';
@@ -7,7 +8,6 @@ import styles from '../styles/about.module.css';
 
 
 const about = ({ aboutProps }) => {
-
     const { title, mainImage, content } = aboutProps;
 
 
@@ -28,8 +28,8 @@ const about = ({ aboutProps }) => {
         </div>
     )
 }
-export default about;
 
+export default about;
 
 export async function getStaticProps() {
     const aboutProps = await aboutPage()

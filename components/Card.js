@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Button from './Button';
 import Link from 'next/link';
+//COMPONENTS
+import Button from './Button';
 //STYLES
 import styles from '../styles/card.module.css';
 
 
-function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart }) {
-      // VARIABLES & STATES
+const Card = ({ name, price, mainImage, product, cart, addToCart, removeFromCart }) => {
     const [inCartAlready, setInCartAlready] = useState(false);
     const [buttonText, setButtonText] = useState('');
 
@@ -20,8 +20,8 @@ function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart
 
     // FUNCTIONS
     function determenIfAlreadyInCart() {
-        setButtonText('lägg i kundvagn');
         setInCartAlready(false);
+        setButtonText('lägg i kundvagn');
 
         cart.forEach((item) => {
             if (item.name === product.name) {
@@ -50,7 +50,6 @@ function Card({ name, price, mainImage, product, cart, addToCart, removeFromCart
                     <h2>price: {price}$</h2>
                 </div>
             </div>
-
             <Button
                 function={() => buttonFunctionality(product)}
                 text={buttonText}

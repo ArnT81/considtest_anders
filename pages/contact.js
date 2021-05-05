@@ -1,3 +1,4 @@
+//COMPONENTS
 import CustomHead from '../components/CustomHead';
 //API
 import { contactPage } from './api';
@@ -7,7 +8,6 @@ import styles from '../styles/contact.module.css';
 
 
 const contact = ({ contactProps }) => {
-    // console.log(contactProps);
     const { title, mainImage, content } = contactProps;
 
     
@@ -28,8 +28,8 @@ const contact = ({ contactProps }) => {
         </div>
     )
 }
-export default contact;
 
+export default contact;
 
 export async function getStaticProps() {
     const contactProps = await contactPage()

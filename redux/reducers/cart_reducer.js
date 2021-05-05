@@ -2,15 +2,14 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cart_actions";
 
 const INITIAL_STATE = [];
 
+//CART REDUCER
 export default function cartReducer(state = INITIAL_STATE, action = {}) {
 
     switch (action.type) {
         case ADD_TO_CART: {
             const cart = state;
             const product = action.payload;
-
             const existingProductIndex = findProductIndex(cart, product.id);
-
             const updatedCart = existingProductIndex >= 0
                 ? updateProductUnits(cart, product)
                 : [...cart, product];
@@ -25,27 +24,6 @@ export default function cartReducer(state = INITIAL_STATE, action = {}) {
 
             return updatedCart;
         }
-
-
-
-
-
-        /* case UPDATE_CART_UNITS: {
-            const payload = action.payload;
-            const cart = state;
-
-            const existingProductIndex = findProductIndex(cart, payload.id);
-
-            if (existingProductIndex >= 0) {
-                let product = cart[existingProductIndex];
-                product.units = payload.units;
-
-                cart[existingProductIndex] = product;
-            }
-
-            return [...cart]
-
-        } */
     }
 
     return state;

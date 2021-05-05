@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 
 const CustomHead = ({ title, keywords, description }) => {
+    
     return (
         <Head>
             <title>{title}</title>

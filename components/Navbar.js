@@ -1,15 +1,13 @@
-
 import Link from 'next/link';
 //REDUX
 import { connect } from 'react-redux';
-// STYLES
+//STYLES
 import styles from '../styles/navbar.module.css';
 
 
-const Navbar = (props, redux) => {
-    // console.log('in Navbar', redux);
+const Navbar = (props) => {
 
-    
+    //SVG
     const RenderCartIcon = () => {
         return (
             <svg
@@ -55,9 +53,4 @@ const mapStateToProps = state => ({
     redux: state.cart
 })
 
-
-
 export default connect(mapStateToProps)(Navbar);
-
-
-// export default Navbar;

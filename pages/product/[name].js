@@ -1,3 +1,4 @@
+//COMPONENTS
 import CustomHead from '../../components/CustomHead';
 //API
 import { productByName, allProducts } from '../api';
@@ -5,8 +6,6 @@ import { StructuredText } from 'react-datocms';
 //STYLES
 import styles from '../../styles/productdetail.module.css';
 
-//todo byta ut så texten tar emot css
-//todo description ser givetvis olika ut för varje produkt (måste hitta ett dynamiskt sätt)
 
 const producDetail = ({ productProps }) => {
     const { name, price, description, mainImage, alternativeImages } = productProps;
@@ -19,26 +18,23 @@ const producDetail = ({ productProps }) => {
                 keywords="about us, consid, web, development, frontend"
                 description={"Welcome to our webshop"}
             />
-
             <h1>{name}</h1>
             <div className={styles.imagecontainer}>
                 <img src={mainImage.url} alt="productimage 1" />
                 {alternativeImages[0] && <img src={alternativeImages[0].url} alt="productimage 2" />}
                 {alternativeImages[1] && <img src={alternativeImages[1].url} alt="productimage 3" />}
             </div>
-
             <main>
                 <h2>price: {price}$</h2>
                 <StructuredText
                     data={description}
                 />
             </main>
-
         </div>
     )
 }
-export default producDetail;
 
+export default producDetail;
 
 export async function getStaticProps(context) {
     const productProps = await productByName(context.params.name);
@@ -49,7 +45,6 @@ export async function getStaticProps(context) {
         }
     }
 }
-
 
 export async function getStaticPaths() {
     const response = await allProducts();
