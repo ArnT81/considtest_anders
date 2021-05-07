@@ -4,9 +4,9 @@
     justify-content: space-between;
     position: absolute;
     right: 10px;
-    top: 110px;
+    top: 60px;
     width: 26vw;
-    height: 80vh;
+    height: 90vh;
     background: var(--bg);
     color: var(--primaryColor);
     padding: 30px;
@@ -23,9 +23,9 @@
     display: grid;
     place-items: center;
     cursor: pointer;
-    width: 60px;
-    height: 60px;
-    font-size: xx-large;
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
     background: var(--secondaryColor);
     border-radius: 50%;
 }
