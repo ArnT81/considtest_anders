@@ -16,11 +16,10 @@
 
 .home main {
     position: relative;
-    top: -200px;
-    width: 1500px;
+    width: 1300px;
     background: var(--bg);
     color: var(--primaryColor);
-    padding: 100px;
+    padding: 50px;
     border-radius: 6px;
     box-shadow: 30px 30px 40px black ;
 }

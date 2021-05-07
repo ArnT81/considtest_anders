@@ -9,3 +9,7 @@
     display: flex;
     padding: 0 10px;
 }
+
+.image {
+    width: 50vw;
+}

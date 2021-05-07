@@ -10,7 +10,7 @@ import styles from '../styles/contact.module.css';
 const contact = ({ contactProps }) => {
     const { title, mainImage, content } = contactProps;
 
-    
+
     return (
         <div className={styles.contact}>
             <CustomHead
@@ -23,7 +23,10 @@ const contact = ({ contactProps }) => {
                 <StructuredText
                     data={content}
                 />
-                <img src={mainImage.url} alt="main" />
+                <img
+                    className={styles.image}
+                    src={mainImage.url}
+                    alt="main" />
             </main>
         </div>
     )

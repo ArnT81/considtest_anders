@@ -20,7 +20,10 @@ const about = ({ aboutProps }) => {
             />
             <h1>{title}</h1>
             <main>
-                <img src={mainImage.url} alt="main" />
+                <img 
+                className={styles.image}
+                src={mainImage.url} 
+                alt="main" />
                 <StructuredText
                     data={content}
                 />
