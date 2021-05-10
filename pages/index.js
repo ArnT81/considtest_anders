@@ -4,7 +4,7 @@ import CustomHead from '../components/CustomHead';
 import { startPage } from '../pages/api';
 import { StructuredText } from 'react-datocms';
 //STYLES
-import styles from '../styles/home.module.css';
+// import styles from '../styles/home.module.css';
 
 
 export default function Home({ homeProps }) {
@@ -12,11 +12,11 @@ export default function Home({ homeProps }) {
 
 
   return (
-    <div className={styles.home}>
+    <div className="home">
       <CustomHead />
       <h1>{title}</h1>
       <img
-        className={styles.background}
+        className="background"
         src={mainImage.url}
         alt="main" />
       <main>
