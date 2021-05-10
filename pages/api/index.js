@@ -53,7 +53,7 @@ query {
 `
 const ALL_PRODUCTS = `
 query {
-  allProducts(orderBy: name_ASC) {
+  allProducts {
     id
     price
     name
@@ -62,7 +62,6 @@ query {
     }
     alternativeImages {
       url
-      id
     }
     description {
       value
